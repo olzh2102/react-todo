@@ -3,18 +3,25 @@ var ReactDOM = require('react-dom');
 
 // Create component 
 var TodoComponent = React.createClass({
+  getInitialState: function() {
+    return {
+      todos: ['wash up', 'help friend', 'take a nap']
+    }
+  },
+
   render: function() {
     return(
-      <div>
-        <p><strong>Halva name:</strong>{this.props.halva.name}</p>
-        <p><strong>Halva smell factor:</strong>{this.props.halva.smellFactor}</p>
-        <p><strong>Halva price:</strong>{this.props.halva.price}</p>
+      <div id="todo-list">
+        <p>The busiest people have the most leisure...</p>
+        <ul>
+          <li>{this.state.todos[0]}</li>
+          <li>{this.state.todos[1]}</li>
+          <li>{this.state.todos[2]}</li>
+        </ul>
       </div>
     );
-  }
+  } // render 
 });
 
-var myHalva = {name: 'Rodina', smellFactor: 'Delicio', price: '3.50'};
-
 // Put component into HTML page 
-ReactDOM.render(<TodoComponent mssg="I like halva" halva={myHalva}/>, document.getElementById('todo-wrapper'));
+ReactDOM.render(<TodoComponent/>, document.getElementById('todo-wrapper'));

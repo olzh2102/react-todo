@@ -44,6 +44,20 @@ var TodoComponent = React.createClass({
       this.setState({
         todos: updatedTodos
       })
+    },
+
+    //  Lifecycle functions 
+    componentWillMount: function() {
+      console.log('componentWilMound');
+    },
+
+    componentDidMount: function() {
+      console.log('componentDidMound');
+      // any grabbing of external data
+    },
+
+    componentWillUpdate: function() {
+      console.log('componentWillUpdate');
     }
 });
 

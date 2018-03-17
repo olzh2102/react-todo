@@ -12,8 +12,8 @@ var TodoComponent = React.createClass({
   render: function() {
     var todos = this.state.todos;
     todos = todos.map(function(item, index) {
-      return (
-        <li>{item}</li>
+      return(
+        <TodoItem item = {item} key={index}/>
       );
     });
     return(
@@ -23,6 +23,19 @@ var TodoComponent = React.createClass({
       </div>
     );
   } // render 
+});
+
+// Create TodoItem component 
+var TodoItem = React.createClass({
+  render: function() {
+    return(
+      <li>
+        <div className="todo-item">
+          <span className="item-name">{this.props.item}</span>
+        </div>
+      </li>
+    );
+  }
 });
 
 // Put component into HTML page 

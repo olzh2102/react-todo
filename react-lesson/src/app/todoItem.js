@@ -7,8 +7,8 @@ var TodoItem = React.createClass({
       return(
           <li>
               <div className="todo-item">
-                  <span className="item-name">{this.props.item}</span>
-      <span className="item-remove" onClick={this.handleDelete /*= this.handleDelete.bind(this)*/}> x </span>
+                <span className="item-name">{this.props.item}</span>
+                <span className="item-remove" onClick={this.handleDelete /*= this.handleDelete.bind(this)*/}> x </span>
               </div>
           </li>
       );
